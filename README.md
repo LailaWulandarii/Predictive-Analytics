@@ -33,6 +33,7 @@ Solusi 1 – Baseline Model dengan Pendekatan Multialgoritma
 
 Solusi 2 – Analisis Feature Importance
 Mengidentifikasi fitur paling signifikan yang berkontribusi terhadap risiko overstimulasi dengan mengecek korelasi fitur dengan terget menggunakan heatmap korelasi dan coefficients pada model Logistic Regression, untuk membantu pemahaman yang lebih dalam dan actionable insight.
+
 Solusi 3 – Peningkatan Model melalui Hyperparameter Tuning
 Melakukan tuning pada model terbaik menggunakan GridSearchCV guna mengoptimalkan kinerja model, serta menyempurnakan klasifikasi berdasarkan threshold dari ROC Curve.
 
