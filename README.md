@@ -30,6 +30,7 @@ BePresent. (2024, June). BePresent 2024 digital wellness report. Retrieved from 
 Solusi 1 – Baseline Model dengan Pendekatan Multialgoritma
   - Algoritma: Logistic Regression (interpretabilitas), SVM (handling non-linearitas), dan KNN (tuning jarak fitur).
   - Evaluasi: Fokus pada precision-recall (karena data imbalance) dan ROC AUC untuk mengukur kemampuan membedakan kelas risiko.
+
 Solusi 2 – Analisis Feature Importance
 Mengidentifikasi fitur paling signifikan yang berkontribusi terhadap risiko overstimulasi dengan mengecek korelasi fitur dengan terget menggunakan heatmap korelasi dan coefficients pada model Logistic Regression, untuk membantu pemahaman yang lebih dalam dan actionable insight.
 Solusi 3 – Peningkatan Model melalui Hyperparameter Tuning
