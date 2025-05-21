@@ -61,19 +61,28 @@ Dataset yang digunakan dalam proyek ini adalah Overstimulation Behavior and Life
 - Overthinking_Score: Skor yang dilaporkan sendiri mengenai seberapa banyak seseorang berpikir berlebihan (1 = rendah, 10 = tinggi)
 - Irritability_Score: Skor iritabilitas yang dilaporkan sendiri pada skala 1 hingga 10 (1 = iritabilitas rendah, 10 = iritabilitas tinggi)
 Sakit kepala
+- Headache_Frequency: Seberapa sering individu mengalami sakit kepala (bilangan bulat antara 0 dan 7, mewakili frekuensi dalam seminggu)
+- Sleep_Quality: Kualitas tidur individu dalam skala 1 hingga 4 (1 = buruk, 4 = sangat baik)
+- Tech_Usage_Hours:Jumlah jam yang dihabiskan untuk menggunakan teknologi (perangkat, komputer, dll.) per hari (mengambang antara 1 dan 10)
 - Overstimulated: Kolom target, di mana 1 menunjukkan bahwa individu tersebut mengalami overstimulasi, dan 0 menunjukkan bahwa mereka tidak mengalami overstimulasi.
 
 ### Exploratory Data Analysis yang dilakukan:
 - Melihat 5 Data Pertama untuk memeriksa contoh data untuk memahami struktur kolom.
-- Mengecek tipe data dan keberadaan nilai null.
-- Melakukan statistik deskriptif dengan menganalisis mean, std, min, max, dan quartile untuk memahami distribusi data.
-- Melakukan visualisasi distribusi target untuk menampilkan sebaran kelas target.
-- Melakukan visualisasi korelasi semua fitur terhadap fitur target untuk menentukan fitur yang layak dijadikan prioritas.
+- Mengecek tipe data dan keberadaan nilai null. Hasilnya tidak ada data kosong.
+- Melakukan statistik deskriptif dengan menganalisis mean, std, min, max, dan quartile untuk memahami distribusi data. Berikut merupakan detail hasilnya.
+  
+    - Usia responden 18–59 tahun, dengan rata-rata 38,7.
+    - Durasi tidur 3–10 jam/hari, dengan rata-rata 6,5, menunjukkan potensi kurang tidur.
+    - Screen time 1–12 jam/hari, dengan rata-rata 6,4 dan tech usage 1–10 jam/hari dengan rata-rata 5,5 mengindikasikan paparan teknologi tinggi.
+    - Stres level 1–9 dengan rata-rata 5 dan skor mental health 1–9 dengan rata-rata 5 menunjukkan kondisi moderat.
+    - Jam kerja 9 jam/hari dengan olahraga hanya 1,5 jam/hari mencerminkan gaya hidup tidak seimbang.
+    - Kualitas tidur mayoritas level 2–3/5 dengan rata-rata 2,3 dengan beberapa kasus sakit kepala intens.
+- Melakukan visualisasi distribusi target untuk menampilkan sebaran kelas target. Hasilnya data memiliki persebaran seperti: 725 data yang tidak overstimulated dan 1275 data overstimulated.
+- Melakukan visualisasi korelasi semua fitur terhadap fitur target untuk menentukan fitur yang layak dijadikan prioritas. Hasilnya terdapat 3 fitu (Screen_Time, Sleep_Hours, dan Stress_Level) yang berkorelasi dengan target, yang nanti akan dipilih untuk proses selanjutnya.
 
 ## Data Preparation
 Dilakukan beberapa teknik data preparation untuk memastikan data siap digunakan dalam pemodelan. Tahap ini bertujuan untuk meningkatkan kualitas data, menghindari bias, dan memastikan model yang dibangun memiliki performa yang baik. Berikut tahapannya:
-
-- Melakukan pemilihan fitur yang berkorelasi dengan fitur target berdasarkan hasil heatmap korelasi fitur. Dilakukan dengan menginisialisasi variable features dengan fitur terpilih (Screen_Time, Sleep_Hours, dan Stress_Level) dan menetapkan target yaitu Overstimulated. Hal ini bertujuan untuk memastikan... 
+- Melakukan pemilihan fitur yang berkorelasi dengan fitur target berdasarkan hasil heatmap korelasi fitur. Dilakukan dengan menginisialisasi variable features dengan fitur terpilih (Screen_Time, Sleep_Hours, dan Stress_Level) dan menetapkan target yaitu Overstimulated. Hal ini bertujuan untuk memastikan semua fitur yang akan digunakan berarti untuk kolom target.
 - Membagi data menjadi training set dan testing set. Dilakukan menggunakan train_test_split dari sklearn.model_selection. Bertujuan untuk mengevaluasi performa model secara adil pada data yang belum pernah dilihat sebelumnya.
 - Standarisasi data menggunakan StandardScaler dari sklearn.preprocessing untuk menormalkan fitur numerik. Bertujuan untuk mempercepat konvergensi model dan meningkatkan akurasi.
 
@@ -165,7 +174,7 @@ Berikut merupakan hasil evaluasi model:
    ![image](https://github.com/user-attachments/assets/3b7cd9c0-aa78-4b39-8921-e36e05979441)
 3. K-Nearest Neighbor
    
-   ![image](https://github.com/user-attachments/assets/69ac8f91-04e6-47d7-a11b-5555ce2a4906
+   ![image](https://github.com/user-attachments/assets/69ac8f91-04e6-47d7-a11b-5555ce2a4906)
 4. Hasil interpretasi koefisien Logistic Regression:
 
    ![image](https://github.com/user-attachments/assets/e76d15f0-45d0-491e-a7d5-80c47a07ec27)
